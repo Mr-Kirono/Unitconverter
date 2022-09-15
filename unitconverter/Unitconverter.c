@@ -1,10 +1,6 @@
 #include<stdio.h>
 #include<math.h>
-#include<lib.h>
 
-void tempconverter();
-void measurementconverter();
-void unitconverter();
 
 int main()
 {
