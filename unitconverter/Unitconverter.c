@@ -20,8 +20,8 @@ struct metric{
 };
 
 struct imperial{
-    float inches;
-    float feet;
+    	float inches;
+    	float feet;
 	float miles;
 	float ounces;
 	float cups;
