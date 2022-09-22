@@ -162,7 +162,7 @@ int main(){
 							printf("Input number of Inches: ");
 							scanf("%f",&imp1.inches);
 							printf("%f Inches is: \n%f millimeters\n",imp1.inches,inches_to_millimeters(imp1));
-							printf("%f centimeters\n",inches_to_centiimeters(imp1));
+							printf("%f centimeters\n",inches_to_centimeters(imp1));
 							printf("%f meters\n",inches_to_meters(imp1));
 							printf("%f kilometers\n",inches_to_kilometers(imp1));
 							break;
@@ -170,7 +170,7 @@ int main(){
 							printf("Input number of feet: ");
 							scanf("%f",&imp1.feet);
 							printf("%f feet is: \n%f millimeters\n",imp1.feet,feet_to_millimeters(imp1));
-							printf("%f centimeters\n",feet_to_centiimeters(imp1));
+							printf("%f centimeters\n",feet_to_centimeters(imp1));
 							printf("%f meters\n",feet_to_meters(imp1));
 							printf("%f kilometers\n",feet_to_kilometers(imp1));
 							break;
@@ -235,20 +235,18 @@ int main(){
 						switch (x)
 						{
 						case 1:
-							printf("Input number of Inches: ");
-							scanf("%f",&imp1.inches);
-							printf("%f Inches is: \n%f millimeters\n",imp1.inches,inches_to_millimeters(imp1));
-							printf("%f centimeters\n",inches_to_centiimeters(imp1));
-							printf("%f meters\n",inches_to_meters(imp1));
-							printf("%f kilometers\n",inches_to_kilometers(imp1));
+							printf("Input number of Ounces: ");
+							scanf("%f",&imp1.ounces);
+							printf("%f ounces is: \n%f milligrams\n",imp1.ounces,ounces_to_milligram(imp1));
+							printf("%f grams\n",ounces_to_grams(imp1));
+							printf("%f kilograms\n",ounces_to_kilogram(imp1));
 							break;
 						case 2:
-							printf("Input number of feet: ");
-							scanf("%f",&imp1.feet);
-							printf("%f feet is: \n%f millimeters\n",imp1.feet,feet_to_millimeters(imp1));
-							printf("%f centimeters\n",feet_to_centiimeters(imp1));
-							printf("%f meters\n",feet_to_meters(imp1));
-							printf("%f kilometers\n",feet_to_kilometers(imp1));
+							printf("Input number of Pounds: ");
+							scanf("%f",&imp1.pounds);
+							printf("%f Pounds is: \n%f milligrams\n",imp1.pounds,pounds_to_milligram(imp1));
+							printf("%f grams\n",pounds_to_grams(imp1));
+							printf("%f kilograms\n",pounds_to_kilogram(imp1));
 							break;
 						default:
 							printf("Invalid option, please pick one of the provided options\n");
@@ -268,32 +266,16 @@ int main(){
 						switch (x)
 						{
 						case 1:
-							printf("Input number of millimeters: ");
-							scanf("%f",&m1.millimeter);
-							printf("%f millimeters is: \n%f inches\n",m1.millimeter,millimeter_to_inches(m1));
-							printf("%f feet\n",millimeter_to_feet(m1));
-							printf("%f miles\n",millimeter_to_miles(m1));
+							printf("Input number of Milliliters: ");
+							scanf("%f",&m1.milliliter);
+							printf("%f millimeters is: \n%f quarts\n",m1.milliliter,milliliter_to_quarts(m1));
+							printf("%f gallons\n",milliliter_to_gallons(m1));
 							break;
 						case 2:
-							printf("Input number of centimeters: ");
-							scanf("%f",&m1.centimeter);
-							printf("%f centimeters is: \n%f inches\n",m1.centimeter,centimeter_to_inches(m1));
-							printf("%f feet\n",centimeter_to_feet(m1));
-							printf("%f miles\n",centimeter_to_miles(m1));
-							break;
-						case 3:
-							printf("Input number of meters: ");
-							scanf("%f",&m1.meter);
-							printf("%f meters is: \n%f inches\n",m1.meter,meter_to_inches(m1));
-							printf("%f feet\n",meter_to_feet(m1));
-							printf("%f miles\n",meter_to_miles(m1));
-							break;
-						case 4:
-							printf("Input number of kilometers: ");
-							scanf("%f",&m1.kilometer);
-							printf("%f kilometers is: \n%f inches\n",kilometer_to_inches(m1));
-							printf("%f feet\n",kilometer_to_feet(m1));
-							printf("%f miles\n",kilometer_to_miles(m1));
+							printf("Input number of Liters: ");
+							scanf("%f",&m1.liter);
+							printf("%f Liters is: \n%f quarts\n",m1.liter,liter_to_quarts(m1));
+							printf("%f gallons\n",liter_to_gallon(m1));
 							break;
 						default:
 							printf("Invalid option, please pick one of the provided options\n");
@@ -313,20 +295,16 @@ int main(){
 							switch (x)
 						{
 						case 1:
-							printf("Input number of Inches: ");
-							scanf("%f",&imp1.inches);
-							printf("%f Inches is: \n%f millimeters\n",imp1.inches,inches_to_millimeters(imp1));
-							printf("%f centimeters\n",inches_to_centiimeters(imp1));
-							printf("%f meters\n",inches_to_meters(imp1));
-							printf("%f kilometers\n",inches_to_kilometers(imp1));
+							printf("Input number of Quarts: ");
+							scanf("%f",&imp1.quarts);
+							printf("%f Quarts is: \n%f milliliters\n",imp1.quarts,quarts_to_milliliter(imp1));
+							printf("%f liters\n",quarts_to_liter(imp1));
 							break;
 						case 2:
-							printf("Input number of feet: ");
-							scanf("%f",&imp1.feet);
-							printf("%f feet is: \n%f millimeters\n",imp1.feet,feet_to_millimeters(imp1));
-							printf("%f centimeters\n",feet_to_centiimeters(imp1));
-							printf("%f meters\n",feet_to_meters(imp1));
-							printf("%f kilometers\n",feet_to_kilometers(imp1));
+							printf("Input number of Gallons: ");
+							scanf("%f",&imp1.gallons);
+							printf("%f Gallons is: \n%f milliliters\n",imp1.gallons,gallons_to_milliliter(imp1));
+							printf("%f liters\n",gallons_to_liter(imp1));
 							break;
 						default:
 							printf("Invalid option, please pick one of the provided options\n");
