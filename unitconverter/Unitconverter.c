@@ -102,22 +102,52 @@ int main(){
 				printf("Input choice: \n");
 				scanf("%c",&choice);
 				if (choice == 'A' || 'a') {
-				
+					printf("(A) METRIC LENGTH TO IMPERIAL LENGTH\n");
+					printf("Inputs will be converted into ALL Imperial equivalents\nSelect a conversion\n");
+					printf("(A) MILLIMETER TO IMPERIAL | (B) CENTIMETER TO IMPERIAL\n(C) METER TO IMPERIAL | (D) KILOMETER TO IMPERIAL\n");
+					printf("Or Input 'Q' to go back to previous menu\n");
+					printf("Input choice: \n");
+					scanf("%c",&choice);
 				}
 				else if (choice == 'B' ||'b'){
-
+					printf("(B) IMPERIAL LENGTH TO METRIC LENGTH\n");
+					printf("Inputs will be converted into ALL Metric equivalents\nSelect a conversion\n");
+					printf("(A) INCH TO METRIC | (B) FEET TO METRIC \n(C) MILES TO METRIC\n");
+					printf("Or Input 'Q' to go back to previous menu\n");
+					printf("Input choice: \n");
+					scanf("%c",&choice);
 				}
 				else if (choice == 'C' || 'c'){
-
+					printf("(C) METRIC MASS TO IMPERIAL MASS\n");
+					printf("Inputs will be converted into ALL Imperial equivalents\nSelect a conversion\n");
+					printf("(A) MILLIGRAM TO IMPERIAL MASS | (B) GRAM TO IMPERIAL MASS\n(C) KILOGRAM TO IMPERIAL MASS\n");
+					printf("Or Input 'Q' to go back to previous menu\n");
+					printf("Input choice: \n");
+					scanf("%c",&choice);
 				}
 				else if (choice == 'D' || 'd'){
-
+					printf("(D) IMPERIAL MASS TO METRIC MASS\n");					
+					printf("Inputs will be converted into ALL Metric equivalents\nSelect a conversion\n");
+					printf("(A) OUNCES TO METRIC MASS | (B) POUNDS TO METRIC MASS\n");
+					printf("Or Input 'Q' to go back to previous menu\n");
+					printf("Input choice: \n");
+					scanf("%c",&choice);
 				}
 				else if (choice == 'E' || 'e'){
-
+					printf("(E) METRIC LIQUID TO IMPERIAL LIQUID\n");				
+					printf("Inputs will be converted into ALL Imperial equivalents\nSelect a conversion\n");
+					printf("(A) MILLILITERS TO IMPERIAL LIQUID | (B) LITERS TO IMPERIAL LIQUID\n");
+					printf("Or Input 'Q' to go back to previous menu\n");
+					printf("Input choice: \n");
+					scanf("%c",&choice);
 				}
 				else if (choice == 'F' || 'f'){
-
+					printf("(F) IMPERIAL LIQUID TO METRIC LIQUID\n");				
+					printf("Inputs will be converted into ALL Metric equivalents\nSelect a conversion\n");
+					printf("(A) QUARTS TO METRIC LIQUID | (B) GALLONS TO METRIC LIQUID\n");
+					printf("Or Input 'Q' to go back to previous menu\n");
+					printf("Input choice: \n");
+					scanf("%c",&choice);
 				}
 				else if (choice == 'Q'||'q'){goto Options;}
 				else {printf("Invalid choice, please select a valid option\n");goto choice_unit;}
