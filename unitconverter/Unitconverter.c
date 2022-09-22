@@ -20,8 +20,8 @@ struct metric{
 };
 
 struct imperial{
-        float inches;
-        float feet;
+    float inches;
+    float feet;
 	float miles;
 	float ounces;
 	float cups;
@@ -30,69 +30,102 @@ struct imperial{
 	float pounds;
 };
 
-
-int main()
-{
+int main(){
 	struct temp t1;
-	struct metric;
-	struct imperial;
+	struct metric m1;
+	struct imperial imp1;
 	char choice;
 	printf("This program converts units\n\n");
+	Options:
+		printf("Select an option for conversion\n\n");
+		printf("(A) TEMPERATURE CONVERTER\n (B) IMPERIAL/METRIC CONVERTER\n");
+		scanf("%c",&choice);
+		//Temperature conversion
+		if (choice == 'A' || 'a') {
+		choice_temp:
+			printf("Select a conversion\n");
+			printf("(A) FARENHEIGHT TO CELCIUS | (B) CELSIUS TO FARENHEIGHT\n(C) CELCIUS TO KELVIN | (D) KELVIN TO CELCIUS\n(E) FARENHEIGHT TO KELVIN | (F) KELVIN TO FARENHEIGHT\n");
+			printf("Or input 'Q' to go back to previous menu.\n");
+			printf("Input choice: \n");
+			scanf("%c",&choice);
+			if (choice == 'A' || 'a') {
+				choice_a:
+					Printf("Farenheight to Celcius\n Input temperature: \n");
+					scanf("%f %c",&t1.far,&choice);
+						if (choice == 'Q'||'q'){goto choice_temp;}
+						else {printf("%f Farenheight is %f Celcius \n",t1.far, far_to_cel(t1));goto choice_a;}
+			}
+			else if (choice == 'B' || 'b') {
+				choice_b:
+					Printf("Celcius to Farenheight\n Input temperature: \n");
+					scanf("%f %c",&t1.cel,&choice);
+						if (choice == 'Q'||'q'){goto choice_temp;}
+						else {printf("%f Celcius is %f Farenheight \n",t1.cel, cel_to_far(t1));goto choice_b;}
+			}
+			else if (choice == 'C' || 'c') {
+				choice_c:
+					Printf("Celcius to Kelvin\n Input temperature: \n");
+					scanf("%f %c",&t1.cel,&choice);
+						if (choice == 'Q'||'q'){goto choice_temp;}
+						else {printf("%f Celcius is %f Kelvin \n",t1.cel, cel_to_kel(t1));goto choice_c;}
+			}
+			else if (choice == 'D' || 'd') {
+				choice_d:
+					Printf("Kelvin to Celcius\n Input temperature: \n");
+					scanf("%f %c",&t1.kel,&choice);
+						if (choice == 'Q'||'q'){goto choice_temp;}
+						else {printf("%f Farenheight is %f Celsius \n",t1.far, far_to_cel(t1));goto choice_d;}
+			}
+			else if (choice == 'E' || 'e') {
+				choice_e:
+					Printf("Farenheight to Kelvin\n Input temperature: \n");
+					scanf("%f %c",&t1.far,&choice);
+						if (choice == 'Q'||'q'){goto choice_temp;}
+						else {printf("%f Farenheight is %f Kelvin \n",t1.far, far_to_kel(t1));goto choice_e;}
+			}
+			else if (choice == 'F' || 'f') {
+				choice_f:
+					Printf("Kelvin to Farenheight\n Input 'Q' to go back to previous menu\n Input temperature: \n");
+					scanf("%f %c",&t1.kel,&choice);
+						if (choice == 'Q'||'q'){goto choice_temp;}
+						else {printf("%f Kelvin is %f Farenheight \n",t1.kel, kel_to_far(t1));goto choice_f;}
+			}
+			else if (choice == 'Q'||'q'){goto Options;}
+			else {printf("Invalid input, please select a valid option\n");goto choice_temp;}
+		}
+		// Metric/Imperial conversion
+		else if (choice == 'B' || 'b'){
+			choice_unit:
+				printf("Select a conversion\n");
+				printf("(A) METRIC LENGTH TO IMPERIAL LENGTH | (B) IMPERIAL LENGTH TO METRIC LENGTH\n(C) METRIC MASS TO IMPERIAL MASS | (D) IMPERIAL MASS TO METRIC MASS\n(E) METRIC LIQUID TO IMPERIAL LIQUID | (F) IMPERIAL LIQUID TO METRIC LIQUID\n");
+				printf("Or Input 'Q' to go back to previous menu\n");
+				printf("Input choice: \n");
+				scanf("%c",&choice);
+				if (choice == 'A' || 'a') {
+				
+				}
+				else if (choice == 'B' ||'b'){
 
-Options:
-	printf("Select an option for conversion\n\n");
-	printf("(A) TEMPERATURE CONVERTER\n (B) IMPERIAL/METRIC CONVERTER\n");
-	scanf("%c",&choice);
+				}
+				else if (choice == 'C' || 'c'){
 
-//Temperature conversion
-if (choice == 'A' || 'a') {
-choice_temp:
-	printf("Select a conversion\n");
-	printf("(A) fARENHEIGHT TO CELCIUS\n (B) CELSIUS TO FARENHEIGHT\n (C) CELCIUS TO KELVIN\n (D) KELVIN TO CELCIUS\n (E) FARENHEIGHT TO KELVIN\n (F) KELVIN TO FARENHEIGHT\n");
-	printf("Input choice: \n");
-	scanf("%c",&choice);
-	if (choice == 'A' || 'a') {
-		Printf("Farenheight to Celcius\n Input temperature: \n");
-		scanf("%f",&t1.far);
-		printf("%f Farenheight is %f Celcius \n",t1.far, far_to_cel(t1));
-	}
-	else if (choice == 'B' || 'b') {
-		Printf("Celcius to Farenheight\n Input temperature: \n");
-                scanf("%f",&t1.cel);
-                printf("%f Celcius is %f Farenheight \n",t1.cel, cel_to_far(t1));
-	}
-	else if (choice == 'C' || 'c') {
-		Printf("Celcius to Kelvin\n Input temperature: \n");
-                scanf("%f",&t1.cel);
-                printf("%f Celcius is %f Kelvin \n",t1.cel, cel_to_kel(t1));
-	}
-	else if (choice == 'D' || 'd') {
-		Printf("Kelvin to Celcius\n Input temperature: \n");
-                scanf("%f",&t1.kel);
-                printf("%f Kelvin is %f Celcius \n",t1.kel, kel_to_cel(t1));
-	}
-	else if (choice == 'E' || 'e') {
-		Printf("Farenheight to Kelvin\n Input temperature: \n");
-                scanf("%f",&t1.far);
-                printf("%f Farenheight is %f Kelvin \n",t1.far, far_to_kel(t1));
-	}
-	else if (choice == 'F' || 'f') {
-		Printf("Kelvin to Farenheight\n Input temperature: \n");
-                scanf("%f",&t1.kel);
-                printf("%f Kelvin is %f Farenheight \n",t1.kel, kel_to_far(t1));
-	}
-	else {printf("Invalid input, please selce valid option\n");goto choice_temp;}
-}
+				}
+				else if (choice == 'D' || 'd'){
 
-// Metric/Imperial conversion
-else if (choice == 'B' || 'b'){
+				}
+				else if (choice == 'E' || 'e'){
 
-}
-else {printf("Invalid option, please select one of the conversion options\n"); goto Options;}
+				}
+				else if (choice == 'F' || 'f'){
+
+				}
+				else if (choice == 'Q'||'q'){goto Options;}
+				else {printf("Invalid choice, please select a valid option\n");goto choice_unit;}
+		}
+		else {printf("Invalid option, please select one of the conversion options\n"); goto Options;}
 }
 //Temperature conversions
-float cel_to_kel(struct temp t)
-{
+float cel_to_kel(struct temp t){
 	return (t.cel + 273.15);
 }
 
@@ -116,100 +149,143 @@ float kel_to_far (struct temp t){
 	return ((t.kel-273.15)*(9/5)+32);
 }
 //Metric to imperial distance conversions
-float millimeter_to_imperial (struct metric m,struct imperial imp){
-	imp.inches = (m.millimeter * 0.03937);
-	imp.feet = (m.millimeter * 0.0032810);
-	imp.miles = (m.millimeter * 0.0000006214);
-	printf("%f millimeters is:\n %f inches\n %f feet\n %f miles\n", m.millimeter, imp.inches, imp.feet, imp.miles);
+float millimeter_to_inches (struct metric m){
+	return (m.millimeter * 0.03937);
 }
-float centimeter_to_imperial (struct metric m,struct imperial imp){
-	imp.inches = (m.centimeter * 0.3937);
-	imp.feet = (m.centimeter * 0.032810);
-    imp.miles = (m.centimeter * 0.000006214);
-    printf("%f centimeters is:\n %f inches\n %f feet\n %f miles\n", m.centimeter, imp.inches, imp.feet, imp.miles);
+float millimeter_to_feet (struct metric m){
+	return (m.millimeter * 0.0032810);
 }
-float meter_to_imperial (struct metric m, struct imperial imp){
-	imp.inches = (m.meter * 39.37);
-	imp.feet = (m.meter * 3.28);
-    imp.miles = (m.meter * 0.0006214);
-    printf("%f meters is: \n %f inches\n %f feet\n %f miles\n", m.centimeter, imp.inches, imp.feet, imp.miles);
+float millimeter_to_miles (struct metric m){
+	return (m.millimeter * 0.0000006214);
 }
-float kilometer_to_imperial (struct metric m, struct imperial imp){
-	imp.inches = (m.kilometer * 39370.08);  
-    imp.feet = (m.kilometer * 3280.84);     
-    imp.miles = (m.kilometer * 0.6214);  
-    printf("%f Kilometers is:\n %f inches\n %f feet\n %f miles\n", m.kilometer, imp.inches, imp.feet, imp.miles); 
+float millimeter_to_inches (struct metric m){
+	return (m.millimeter * 0.03937);
+}
+float centimeter_to_inches (struct metric m){
+	return (m.centimeter * 0.3937);
+}
+float centimeter_to_feet (struct metric m){
+	return (m.centimeter * 0.032810);
+}
+float centimeter_to_miles (struct metric m){
+	return (m.centimeter * 0.000006214);
+}
+float meter_to_inches (struct metric m){
+	return (m.meter * 39.37);
+}
+float meter_to_feet (struct metric m){
+	return (m.meter * 3.28);
+}
+float meter_to_miles (struct metric m){
+	return (m.meter * 0.0006214);
+}
+float kilometer_to_inches (struct metric m){
+	return (m.kilometer * 39370.08);
+}
+float kilometer_to_feet (struct metric m){
+	return (m.kilometer * 3280.84); 
+}
+float kilometer_to_miles (struct metric m){
+	return (m.kilometer * 0.6214); 
 }
 //Metric to imperial mass conversions
-float milligram_to_imperial (struct metric m,struct imperial imp){
-	imp.ounces = (m.milligram * 0.00003527);    
-    imp.pounds = (m.milligram * 0.000002205);  
-    printf("%f milligrams is:\n %f ounces\n %f pounds\n", m.milligram, imp.ounces, imp.pounds); 
+float milligram_to_ounce (struct metric m){
+	return  (m.milligram * 0.00003527);
 }
-float gram_to_imperial (struct metric m,struct imperial imp){
-	imp.ounces = (m.gram * 0.03527);
-    imp.pounds = (m.gram * 0.002205);
-    printf("%f grams is:\n %f ounces\n %f pounds\n", m.gram, imp.ounces, imp.pounds); 
+float milligram_to_pounds (struct metric m){
+	return (m.milligram * 0.000002205); 
 }
-float kilogram_to_imperial (struct metric m,struct imperial imp){
-	imp.ounces = (m.kilogram * 35.27);
-    imp.pounds = (m.kilogram * 2.20);
-    printf("%f kilograms is:\n %f ounces\n %f pounds\n", m.kilogram, imp.ounces, imp.pounds); 
+float gram_to_ounce (struct metric m){
+	return (m.gram * 0.03527); 
+}
+float gram_to_pound (struct metric m){
+	return (m.gram * 0.002205);
+}
+float kilogram_to_ounce (struct metric m){
+	return  (m.kilogram * 35.27);
+}
+float kilogram_to_pounds (struct metric m){
+	return (m.kilogram * 2.20);
 }
 //Metric to imperial Liquid conversions
-float millileter_to_imperial (struct metric m,struct imperial imp){
-	imp.quarts = (m.milliliter * 0.0008799);
-    imp.gallons = (m.milliliter * 0.000220);
-    printf("%f milliliters is:\n %f quarts\n %f gallons\n", m.milliliter, imp.quarts, imp.gallons); 
+float milliliter_to_quarts (struct metric m){
+	return  (m.milliliter * 0.0008799);
 }
-float liter_to_imperial (struct metric m,struct imperial imp){
-	imp.quarts = (m.liter * 0.8799);
-    imp.gallons = (m.liter * 0.220);
-    printf("%f liters is:\n %f quarts\n %f gallons\n", m.milligram, imp.quarts, imp.gallons); 
+float milliliter_to_gallons (struct metric m){
+	return  (m.milliliter * 0.000220);
+}
+float liter_to_quarts (struct metric m){
+	return  (m.liter * 0.8799);
+}
+float liter_to_gallon (struct metric m){
+	return  (m.liter * 0.220);
 }
 // Imperial to metric distance conversions
-float inches_to_metric(struct metric m,struct imperial imp){
-	m.millimeter = (imp.inches * 25.4);
-	m.centimeter = (imp.inches * 2.54);
-	m.meter = (imp.inches * 0.0254);
-	m.kilometer = (imp.inches * 0.0000254);
-	printf("%f Inches is:\n %f millimeters\n %f centimeters\n %f meters\n %f kilometers\n", imp.inches, m.millimeter, m.centimeter, m.meter, m.kilometer);
-} 
-float feet_to_metric(struct metric m,struct imperial imp){
-	m.millimeter = (imp.feet * 304.8);
-	m.centimeter = (imp.feet * 30.48);
-	m.meter = (imp.feet * 0.3048);
-	m.kilometer = (imp.feet * 0.0003048);
-	printf("%f Feet is:\n %f millimeters\n %f centimeters\n %f meters\n %f kilometers\n", imp.feet, m.millimeter, m.centimeter, m.meter, m.kilometer);
+float inches_to_millimeters (struct imperial imp){
+	return  (imp.inches * 25.4);
 }
-float miles_to_metric(struct metric m,struct imperial imp){
-	m.millimeter = (imp.miles * 1609344.00);
-	m.centimeter = (imp.miles * 160934.40);
-	m.meter = (imp.miles * 1609.34);
-	m.kilometer = (imp.miles * 1.61);
-	printf("%f Miles is:\n %f millimeters\n %f centimeters\n %f meters\n %f kilometers\n", imp.miles, m.millimeter, m.centimeter, m.meter, m.kilometer);
+float inches_to_centimeters (struct imperial imp){
+	return  (imp.inches * 2.54);
+}
+float inches_to_meters (struct imperial imp){
+	return  (imp.inches * 0.0254);
+}
+float inches_to_kilometers (struct imperial imp){
+	return  (imp.inches * 0.0000254);
+}
+float feet_to_millimeters (struct imperial imp){
+	return  (imp.feet * 304.8);
+}
+float feet_to_centimeters (struct imperial imp){
+	return  (imp.feet * 30.48);
+}
+float feet_to_meters (struct imperial imp){
+	return  (imp.feet * 0.3048);
+}
+float feet_to_kilometers (struct imperial imp){
+	return  (imp.feet * 0.0003048);
+}
+float miles_to_millimeters (struct imperial imp){
+	return  (imp.miles * 1609344.00);
+}
+float miles_to_centimeters (struct imperial imp){
+	return  (imp.miles * 160934.40);
+}
+float miles_to_meters (struct imperial imp){
+	return  (imp.miles * 1609.34);
+}
+float miles_to_kilometers (struct imperial imp){
+	return  (imp.miles * 1.61);
 }
 //Imperial to metric mass conversions
-float ounces_to_metric(struct metric m,struct imperial imp){
-	m.milligram = (imp.ounces * 28,349.52);    
-    m.gram = (imp.ounces * 28.35);  
-    m.kilogram = (imp.ounces * 0.02835); 
-    printf("%f Ounces is:\n %f milligrams\n %f grams\n %f kilograms\n", imp.ounces, m.milligram, m.gram, m.kilogram);
+float ounces_to_milligram(struct imperial imp){
+	return (imp.ounces * 28349.52);
 }
-float pounds_to_metric(struct metric m,struct imperial imp){
-	m.milligram = (imp.pounds * 453,592.37);    
-    m.gram = (imp.pounds * 453.59);  
-    m.kilogram = (imp.pounds * 0.4536); 
-    printf("%f Pounds is:\n %f milligrams\n %f grams\n %f kilograms\n", imp.pounds, m.milligram, m.gram, m.kilogram);
+float ounces_to_grams(struct imperial imp){
+	return (imp.ounces * 28.35);
+}
+float ounces_to_kilogram(struct imperial imp){
+	return (imp.ounces * 0.02835);
+}
+float pounds_to_milligram(struct imperial imp){
+	return (imp.pounds * 453592.37);
+}
+float pounds_to_grams(struct imperial imp){
+	return (imp.pounds * 453.59);
+}
+float pounds_to_kilogram(struct imperial imp){
+	return (imp.pounds * 0.4536);
 }
 //Imperial to metric liquid conversions
-float quarts_to_metric(struct metric m,struct imperial imp){
-	m.milliliter= (imp.quarts * 1,136.52);
-    m.liter = (imp.quarts * 1.14);
-    printf("%f Quarts is:\n %f millileters\n %f liters\n", imp.quarts, m.milliliter, m.liter); 
+float quarts_to_milliliter(struct imperial imp){
+	return (imp.quarts * 1136.52);
 }
-float gallons_to_metric(struct metric m,struct imperial imp){
-	m.milliliter= (imp.gallons * 4,546.09);
-    m.liter = (imp.gallons * 4.55);
-    printf("%f Gallons is:\n %f millileters\n %f liters\n", imp.gallons, m.milliliter, m.liter); 
+float quarts_to_liter(struct imperial imp){
+	return (imp.quarts * 1.14);
+}
+float gallons_to_milliliter(struct imperial imp){
+	return (imp.gallons * 4546.09);
+}
+float gallons_to_liter(struct imperial imp){
+	return (imp.gallons * 4.55);
 }
