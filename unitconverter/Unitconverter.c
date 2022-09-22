@@ -20,8 +20,8 @@ struct metric{
 };
 
 struct imperial{
-    	float inches;
-    	float feet;
+	float inches;
+	float feet;
 	float miles;
 	float ounces;
 	float cups;
@@ -35,6 +35,7 @@ int main(){
 	struct metric m1;
 	struct imperial imp1;
 	char choice;
+	int x = 0;
 	printf("This program converts units\n\n");
 	Options:
 		printf("Select an option for conversion\n\n");
@@ -102,57 +103,242 @@ int main(){
 				printf("Input choice: \n");
 				scanf("%c",&choice);
 				if (choice == 'A' || 'a') {
-					printf("(A) METRIC LENGTH TO IMPERIAL LENGTH\n");
-					printf("Inputs will be converted into ALL Imperial equivalents\nSelect a conversion\n");
-					printf("(A) MILLIMETER TO IMPERIAL | (B) CENTIMETER TO IMPERIAL\n(C) METER TO IMPERIAL | (D) KILOMETER TO IMPERIAL\n");
-					printf("Or Input 'Q' to go back to previous menu\n");
-					printf("Input choice: \n");
-					scanf("%c",&choice);
+					unit_a:
+						printf("(A) METRIC LENGTH TO IMPERIAL LENGTH\n");
+						printf("Inputs will be converted into ALL Imperial equivalents\nSelect a conversion\n");
+						printf("(1) MILLIMETER TO IMPERIAL | (2) CENTIMETER TO IMPERIAL\n(3) METER TO IMPERIAL | (4) KILOMETER TO IMPERIAL\n");
+						printf("Or Input 'Q' to go back to previous menu\n");
+						printf("Input choice: \n");
+						scanf("%c %d",&choice,&x);
+						if (choice == 'Q' || 'q'){goto choice_unit;}
+						switch (x)
+						{
+						case 1:
+							printf("Input number of millimeters: ");
+							scanf("%f",&m1.millimeter);
+							printf("%f millimeters is: \n%f inches\n",m1.millimeter,millimeter_to_inches(m1));
+							printf("%f feet\n",millimeter_to_feet(m1));
+							printf("%f miles\n",millimeter_to_miles(m1));
+							break;
+						case 2:
+							printf("Input number of centimeters: ");
+							scanf("%f",&m1.centimeter);
+							printf("%f centimeters is: \n%f inches\n",m1.centimeter,centimeter_to_inches(m1));
+							printf("%f feet\n",centimeter_to_feet(m1));
+							printf("%f miles\n",centimeter_to_miles(m1));
+							break;
+						case 3:
+							printf("Input number of meters: ");
+							scanf("%f",&m1.meter);
+							printf("%f meters is: \n%f inches\n",m1.meter,meter_to_inches(m1));
+							printf("%f feet\n",meter_to_feet(m1));
+							printf("%f miles\n",meter_to_miles(m1));
+							break;
+						case 4:
+							printf("Input number of kilometers: ");
+							scanf("%f",&m1.kilometer);
+							printf("%f kilometers is: \n%f inches\n",kilometer_to_inches(m1));
+							printf("%f feet\n",kilometer_to_feet(m1));
+							printf("%f miles\n",kilometer_to_miles(m1));
+							break;
+						default:
+							printf("Invalid option, please pick one of the provided options\n");
+							goto unit_a;
+							break;
+						}
 				}
 				else if (choice == 'B' ||'b'){
-					printf("(B) IMPERIAL LENGTH TO METRIC LENGTH\n");
-					printf("Inputs will be converted into ALL Metric equivalents\nSelect a conversion\n");
-					printf("(A) INCH TO METRIC | (B) FEET TO METRIC \n(C) MILES TO METRIC\n");
-					printf("Or Input 'Q' to go back to previous menu\n");
-					printf("Input choice: \n");
-					scanf("%c",&choice);
+					unit_b:
+						printf("(B) IMPERIAL LENGTH TO METRIC LENGTH\n");
+						printf("Inputs will be converted into ALL Metric equivalents\nSelect a conversion\n");
+						printf("(1) INCH TO METRIC | (2) FEET TO METRIC \n(3) MILES TO METRIC\n");
+						printf("Or Input 'Q' to go back to previous menu\n");
+						printf("Input choice: \n");
+						scanf("%c %d",&choice,&x);
+						if (choice == 'Q' || 'q'){goto choice_unit;}
+						switch (x)
+						{
+						case 1:
+							printf("Input number of Inches: ");
+							scanf("%f",&imp1.inches);
+							printf("%f Inches is: \n%f millimeters\n",imp1.inches,inches_to_millimeters(imp1));
+							printf("%f centimeters\n",inches_to_centiimeters(imp1));
+							printf("%f meters\n",inches_to_meters(imp1));
+							printf("%f kilometers\n",inches_to_kilometers(imp1));
+							break;
+						case 2:
+							printf("Input number of feet: ");
+							scanf("%f",&imp1.feet);
+							printf("%f feet is: \n%f millimeters\n",imp1.feet,feet_to_millimeters(imp1));
+							printf("%f centimeters\n",feet_to_centiimeters(imp1));
+							printf("%f meters\n",feet_to_meters(imp1));
+							printf("%f kilometers\n",feet_to_kilometers(imp1));
+							break;
+						case 3:
+							printf("Input number of miles: ");
+							scanf("%f",&imp1.miles);
+							printf("%f miles is: \n%f inches\n",imp1.miles,miles_to_millimeters(imp1));
+							printf("%f centimeters\n",miles_to_centimeters(imp1));
+							printf("%f meters\n",miles_to_meters(imp1));
+							printf("%f kilometers\n",miles_to_kilometers(imp1));
+							break;
+						default:
+							printf("Invalid option, please pick one of the provided options\n");
+							goto unit_b;
+							break;
+						}
 				}
 				else if (choice == 'C' || 'c'){
-					printf("(C) METRIC MASS TO IMPERIAL MASS\n");
-					printf("Inputs will be converted into ALL Imperial equivalents\nSelect a conversion\n");
-					printf("(A) MILLIGRAM TO IMPERIAL MASS | (B) GRAM TO IMPERIAL MASS\n(C) KILOGRAM TO IMPERIAL MASS\n");
-					printf("Or Input 'Q' to go back to previous menu\n");
-					printf("Input choice: \n");
-					scanf("%c",&choice);
+					unit_c:
+						printf("(C) METRIC MASS TO IMPERIAL MASS\n");
+						printf("Inputs will be converted into ALL Imperial equivalents\nSelect a conversion\n");
+						printf("(1) MILLIGRAM TO IMPERIAL MASS | (2) GRAM TO IMPERIAL MASS\n(3) KILOGRAM TO IMPERIAL MASS\n");
+						printf("Or Input 'Q' to go back to previous menu\n");
+						printf("Input choice: \n");
+						scanf("%c %d",&choice,&x);
+						if (choice == 'Q' || 'q'){goto choice_unit;}
+						switch (x)
+						{
+						case 1:
+							printf("Input number of milligrams: ");
+							scanf("%f",&m1.milligram);
+							printf("%f milligrams is: \n%f ounces\n",m1.milligram,milligram_to_ounce(m1));
+							printf("%f pounds\n",milligram_to_pounds(m1));
+							break;
+						case 2:
+							printf("Input number of grams: ");
+							scanf("%f",&m1.gram);
+							printf("%f grams is: \n%f ounces\n",m1.gram,gram_to_ounce(m1));
+							printf("%f pounds\n",gram_to_pound(m1));
+							break;
+						case 3:
+							printf("Input number of kilograms: ");
+							scanf("%f",&m1.kilogram);
+							printf("%f kilograms is: \n%f ounces\n",m1.kilogram,kilogram_to_ounce(m1));
+							printf("%f pounds\n",kilogram_to_pounds(m1));
+							break;
+						default:
+							printf("Invalid option, please pick one of the provided options\n");
+							goto unit_c;
+							break;
+						}				
 				}
 				else if (choice == 'D' || 'd'){
-					printf("(D) IMPERIAL MASS TO METRIC MASS\n");					
-					printf("Inputs will be converted into ALL Metric equivalents\nSelect a conversion\n");
-					printf("(A) OUNCES TO METRIC MASS | (B) POUNDS TO METRIC MASS\n");
-					printf("Or Input 'Q' to go back to previous menu\n");
-					printf("Input choice: \n");
-					scanf("%c",&choice);
+					unit_d:
+						printf("(D) IMPERIAL MASS TO METRIC MASS\n");					
+						printf("Inputs will be converted into ALL Metric equivalents\nSelect a conversion\n");
+						printf("(1) OUNCES TO METRIC MASS | (2) POUNDS TO METRIC MASS\n");
+						printf("Or Input 'Q' to go back to previous menu\n");
+						printf("Input choice: \n");
+						scanf("%c %d",&choice,&x);
+						if (choice == 'Q' || 'q'){goto choice_unit;}
+						switch (x)
+						{
+						case 1:
+							printf("Input number of Inches: ");
+							scanf("%f",&imp1.inches);
+							printf("%f Inches is: \n%f millimeters\n",imp1.inches,inches_to_millimeters(imp1));
+							printf("%f centimeters\n",inches_to_centiimeters(imp1));
+							printf("%f meters\n",inches_to_meters(imp1));
+							printf("%f kilometers\n",inches_to_kilometers(imp1));
+							break;
+						case 2:
+							printf("Input number of feet: ");
+							scanf("%f",&imp1.feet);
+							printf("%f feet is: \n%f millimeters\n",imp1.feet,feet_to_millimeters(imp1));
+							printf("%f centimeters\n",feet_to_centiimeters(imp1));
+							printf("%f meters\n",feet_to_meters(imp1));
+							printf("%f kilometers\n",feet_to_kilometers(imp1));
+							break;
+						default:
+							printf("Invalid option, please pick one of the provided options\n");
+							goto unit_d;
+							break;
+						}				
 				}
 				else if (choice == 'E' || 'e'){
-					printf("(E) METRIC LIQUID TO IMPERIAL LIQUID\n");				
-					printf("Inputs will be converted into ALL Imperial equivalents\nSelect a conversion\n");
-					printf("(A) MILLILITERS TO IMPERIAL LIQUID | (B) LITERS TO IMPERIAL LIQUID\n");
-					printf("Or Input 'Q' to go back to previous menu\n");
-					printf("Input choice: \n");
-					scanf("%c",&choice);
+					unit_e:
+						printf("(E) METRIC LIQUID TO IMPERIAL LIQUID\n");				
+						printf("Inputs will be converted into ALL Imperial equivalents\nSelect a conversion\n");
+						printf("(1) MILLILITERS TO IMPERIAL LIQUID | (2) LITERS TO IMPERIAL LIQUID\n");
+						printf("Or Input 'Q' to go back to previous menu\n");
+						printf("Input choice: \n");
+						scanf("%c %d",&choice,&x);
+						if (choice == 'Q' || 'q'){goto choice_unit;}
+						switch (x)
+						{
+						case 1:
+							printf("Input number of millimeters: ");
+							scanf("%f",&m1.millimeter);
+							printf("%f millimeters is: \n%f inches\n",m1.millimeter,millimeter_to_inches(m1));
+							printf("%f feet\n",millimeter_to_feet(m1));
+							printf("%f miles\n",millimeter_to_miles(m1));
+							break;
+						case 2:
+							printf("Input number of centimeters: ");
+							scanf("%f",&m1.centimeter);
+							printf("%f centimeters is: \n%f inches\n",m1.centimeter,centimeter_to_inches(m1));
+							printf("%f feet\n",centimeter_to_feet(m1));
+							printf("%f miles\n",centimeter_to_miles(m1));
+							break;
+						case 3:
+							printf("Input number of meters: ");
+							scanf("%f",&m1.meter);
+							printf("%f meters is: \n%f inches\n",m1.meter,meter_to_inches(m1));
+							printf("%f feet\n",meter_to_feet(m1));
+							printf("%f miles\n",meter_to_miles(m1));
+							break;
+						case 4:
+							printf("Input number of kilometers: ");
+							scanf("%f",&m1.kilometer);
+							printf("%f kilometers is: \n%f inches\n",kilometer_to_inches(m1));
+							printf("%f feet\n",kilometer_to_feet(m1));
+							printf("%f miles\n",kilometer_to_miles(m1));
+							break;
+						default:
+							printf("Invalid option, please pick one of the provided options\n");
+							goto unit_e;
+							break;
+						}					
 				}
 				else if (choice == 'F' || 'f'){
-					printf("(F) IMPERIAL LIQUID TO METRIC LIQUID\n");				
-					printf("Inputs will be converted into ALL Metric equivalents\nSelect a conversion\n");
-					printf("(A) QUARTS TO METRIC LIQUID | (B) GALLONS TO METRIC LIQUID\n");
-					printf("Or Input 'Q' to go back to previous menu\n");
-					printf("Input choice: \n");
-					scanf("%c",&choice);
+					unit_f:
+						printf("(F) IMPERIAL LIQUID TO METRIC LIQUID\n");				
+						printf("Inputs will be converted into ALL Metric equivalents\nSelect a conversion\n");
+						printf("(1) QUARTS TO METRIC LIQUID | (2) GALLONS TO METRIC LIQUID\n");
+						printf("Or Input 'Q' to go back to previous menu\n");
+						printf("Input choice: \n");
+						scanf("%c %d",&choice,&x);
+						if (choice == 'Q' || 'q'){goto choice_unit;}
+							switch (x)
+						{
+						case 1:
+							printf("Input number of Inches: ");
+							scanf("%f",&imp1.inches);
+							printf("%f Inches is: \n%f millimeters\n",imp1.inches,inches_to_millimeters(imp1));
+							printf("%f centimeters\n",inches_to_centiimeters(imp1));
+							printf("%f meters\n",inches_to_meters(imp1));
+							printf("%f kilometers\n",inches_to_kilometers(imp1));
+							break;
+						case 2:
+							printf("Input number of feet: ");
+							scanf("%f",&imp1.feet);
+							printf("%f feet is: \n%f millimeters\n",imp1.feet,feet_to_millimeters(imp1));
+							printf("%f centimeters\n",feet_to_centiimeters(imp1));
+							printf("%f meters\n",feet_to_meters(imp1));
+							printf("%f kilometers\n",feet_to_kilometers(imp1));
+							break;
+						default:
+							printf("Invalid option, please pick one of the provided options\n");
+							goto unit_f;
+							break;
+						}					
 				}
 				else if (choice == 'Q'||'q'){goto Options;}
 				else {printf("Invalid choice, please select a valid option\n");goto choice_unit;}
 		}
 		else {printf("Invalid option, please select one of the conversion options\n"); goto Options;}
+return 0;
 }
 //Temperature conversions
 float cel_to_kel(struct temp t){
