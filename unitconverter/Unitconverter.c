@@ -33,7 +33,7 @@ struct imperial{
 
 int main()
 {
-	struct temp *tempPtr, t;
+	struct temp t1;
 	struct metric;
 	struct imperial;
 	char choice;
@@ -53,33 +53,33 @@ choice_temp:
 	scanf("%c",&choice);
 	if (choice == 'A' || 'a') {
 		Printf("Farenheight to Celcius\n Input temperature: \n");
-		scanf("%f",&tempPtr->far);
-		printf("%f Farenheight is %f Celcius \n",tempPtr->far, far_to_cel(tempPtr->t.far));
+		scanf("%f",&t1.far);
+		printf("%f Farenheight is %f Celcius \n",t1.far, far_to_cel(t1));
 	}
 	else if (choice == 'B' || 'b') {
 		Printf("Celcius to Farenheight\n Input temperature: \n");
-                scanf("%f",&tempPtr->cel);
-                printf("%f Celcius is %f Farenheight \n",tempPtr->cel, cel_to_far(tempPtr->cel));
+                scanf("%f",&t1.cel);
+                printf("%f Celcius is %f Farenheight \n",t1.cel, cel_to_far(t1));
 	}
 	else if (choice == 'C' || 'c') {
 		Printf("Celcius to Kelvin\n Input temperature: \n");
-                scanf("%f",&tempPtr->cel);
-                printf("%f Celcius is %f Kelvin \n",tempPtr->cel, cel_to_kel(tempPtr->cel));
+                scanf("%f",&t1.cel);
+                printf("%f Celcius is %f Kelvin \n",t1.cel, cel_to_kel(t1));
 	}
 	else if (choice == 'D' || 'd') {
 		Printf("Kelvin to Celcius\n Input temperature: \n");
-                scanf("%f",&tempPtr->kel);
-                printf("%f Kelvin is %f Celcius \n",tempPtr->kel, kel_to_cel(tempPtr->kel));
+                scanf("%f",&t1.kel);
+                printf("%f Kelvin is %f Celcius \n",t1.kel, kel_to_cel(t1));
 	}
 	else if (choice == 'E' || 'e') {
 		Printf("Farenheight to Kelvin\n Input temperature: \n");
-                scanf("%f",&tempPtr->far);
-                printf("%f Farenheight is %f Kelvin \n",tempPtr->far, far_to_kel(tempPtr->far));
+                scanf("%f",&t1.far);
+                printf("%f Farenheight is %f Kelvin \n",t1.far, far_to_kel(t1));
 	}
 	else if (choice == 'F' || 'f') {
 		Printf("Kelvin to Farenheight\n Input temperature: \n");
-                scanf("%f",&tempPtr->kel);
-                printf("%f Kelvin is %f Farenheight \n",tempPtr->kel, kel_to_far(tempPtr->kel));
+                scanf("%f",&t1.kel);
+                printf("%f Kelvin is %f Farenheight \n",t1.kel, kel_to_far(t1));
 	}
 	else {printf("Invalid input, please selce valid option\n");goto choice_temp;}
 }
