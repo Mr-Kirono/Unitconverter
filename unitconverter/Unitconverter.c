@@ -109,13 +109,11 @@ int main(){
 			if (exit == 'q' || 'Q')
 			{
 				quit = 1;
-				choice = 0;
+			}else{
+				quit = 0;
 			}
 			switch (choice)
 			{
-			case 0:
-				printf("Bye bye\n");
-				break;
 			case 1:
 				printf("(1) CELCIUS TO FARENHEIT\n");
 				printf("Input temperature\n");
@@ -210,40 +208,40 @@ int main(){
 					switch (choice)
 					{
 					case 1:
-						printf("\n");
-						printf("\n");
+						printf("OUNCES TO MILLIGRAMS\n");
+						printf("Input measurement:\n");
 						scanf("%f",&imp1.ounces);
-						printf("\n");
+						printf("%f Ounces is %f is Milligrams\n",imp1.ounces,ounces_to_milligram(imp1));
 						break;
 					case 2:
-						printf("\n");
-						printf("\n");
+						printf("OUNCES TO GRAMS\n");
+						printf("Input measurement:\n");
 						scanf("%f",&imp1.ounces);
-						printf("\n");
+						printf("%f Ounces is %f is Grams\n",imp1.ounces,ounces_to_grams(imp1));
 						break;
 					case 3:
-						printf("\n");
-						printf("\n");
+						printf("OUNCES TO KILOGRAMS\n");
+						printf("Input measurement:\n");
 						scanf("%f",&imp1.ounces);
-						printf("\n");
+						printf("%f Ounces is %f is Kilograms\n",imp1.ounces,ounces_to_kilogram(imp1));
 						break;
 					case 4:
-						printf("\n");
-						printf("\n");
+						printf("POUNDS TO MILLIGRAMS\n");
+						printf("Input measurement:\n");
 						scanf("%f",&imp1.pounds);
-						printf("\n");
+						printf("%f Pounds is %f is Milligrams\n",imp1.pounds,pounds_to_milligram(imp1));
 						break;
 					case 5:
-						printf("\n");
-						printf("\n");
+						printf("POUNDS TO GRAMS\n");
+						printf("Input measurement:\n");
 						scanf("%f",&imp1.pounds);
-						printf("\n");
+						printf("%f Pounds is %f is Grams\n",imp1.pounds,pounds_to_grams(imp1));
 						break;
 					case 6:
-						printf("\n");
-						printf("\n");
+						printf("POUNDS TO KILOGRAMS\n");
+						printf("Input measurement:\n");
 						scanf("%f",&imp1.pounds);
-						printf("\n");
+						printf("%f Pounds is %f is Kilograms\n",imp1.pounds,pounds_to_kilogram(imp1));
 						break;																									
 					default:
 						printf("Invalid input please select one of the provided options.\n");
@@ -257,52 +255,52 @@ int main(){
 					switch (choice)
 					{
 					case 1:
-						printf("\n");
-						printf("\n");
+						printf("INCHES TO MILLIMETERS\n");
+						printf("Input measurement:\n");
 						scanf("%f",&imp1.inches);
-						printf("\n");
+						printf("%f Inches is %f is Millimeters\n",imp1.inches,inches_to_millimeters(imp1));
 						break;
 					case 2:
-						printf("\n");
-						printf("\n");
+						printf("INCHES TO CENTIMETERS\n");
+						printf("Input measurement:\n");
 						scanf("%f",&imp1.inches);
-						printf("\n");
+						printf("%f Inches is %f is Centimeters\n",imp1.inches,inches_to_centimeters(imp1));
 						break;
 					case 3:
-						printf("\n");
-						printf("\n");
+						printf("INCHES TO METERS\n");
+						printf("Input measurement:\n");
 						scanf("%f",&imp1.inches);
-						printf("\n");
+						printf("%f Inches is %f is Meters\n",imp1.inches,inches_to_meters(imp1));
 						break;
 					case 4:
-						printf("\n");
-						printf("\n");
+						printf("FEET TO MILLIMETERS\n");
+						printf("Input measurement:\n");
 						scanf("%f",&imp1.feet);
-						printf("\n");
+						printf("%f Feet is %f is Millimeters\n",imp1.feet,feet_to_millimeters(imp1));
 						break;
 					case 5:
-						printf("\n");
-						printf("\n");
+						printf("FEET TO CENTIMETERS\n");
+						printf("Input measurement:\n");
 						scanf("%f",&imp1.feet);
-						printf("\n");
+						printf("%f Feet is %f is Centimeters\n",imp1.feet,feet_to_centimeters(imp1));
 						break;
 					case 6:
-						printf("\n");
-						printf("\n");
+						printf("FEET TO METERS\n");
+						printf("Input measurement:\n");
 						scanf("%f",&imp1.feet);
-						printf("\n");
+						printf("%f Feet is %f is Meters\n",imp1.feet,feet_to_meters(imp1));
 						break;
 					case 7:
-						printf("\n");
-						printf("\n");
+						printf("MILES TO METERS\n");
+						printf("Input measurement:\n");
 						scanf("%f",&imp1.miles);
-						printf("\n");
+						printf("%f Miles is %f is Meters\n",imp1.miles,miles_to_meters(imp1));
 						break;
 					case 8:
-						printf("\n");
-						printf("\n");
+						printf("MILES TO KILOMETERS\n");
+						printf("Input measurement:\n");
 						scanf("%f",&imp1.miles);
-						printf("\n");
+						printf("%f Miles is %f is Kilometers\n",imp1.miles,miles_to_kilometers(imp1));
 						break;																																									
 					default:
 						printf("Invalid input please select one of the provided options.\n");
@@ -322,28 +320,80 @@ int main(){
 				{
 				case 1:
 					printf("UNITS OF LIQUID CONVERTER\n");
-					printf("Select a conversion:(1)(2)(3)(4)\n");
+					printf("Select a conversion:(1)MILLILITERS TO QUARTS | (2)MILLILITERS TO GALLONS\n(3)LITERS TO QUARTS(4)LITERS TO GALLONS\n");
 					scanf("%d",&choice);
 					switch (choice)
 					{
 					case 1:
-						/* code */
+						printf("MILLILITERS TO QUARTS\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.milliliter);
+						printf("%f Millimeters is %f is Quarts\n",m1.milliliter,milliliter_to_quarts(m1));						
 						break;
-					
+					case 2:
+						printf("MILLILITERS TO GALLONS\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.milliliter);
+						printf("%f Millimeters is %f is Gallons\n",m1.milliliter,milliliter_to_gallons(m1));						
+						break;
+					case 3:
+						printf("LITERS TO QUARTS\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.liter);
+						printf("%f Liters is %f is Quarts\n",m1.liter,liter_to_quarts(m1));						
+						break;
+					case 4:
+						printf("LITERS TO GALLONS\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.liter);
+						printf("%f Liters is %f is gallon\n",m1.liter,liter_to_gallon(m1));						
+						break;																	
 					default:
 						break;
 					}
 					break;
 				case 2:
 					printf("UNIT OF MASS CONVERTER\n");
-					printf("Select a conversion:(1)(2)(3)(4)(5)(6)\n");
+					printf("Select a conversion:(1)MILLIGRAM TO OUNCES | (2)MILLIGRAMS TO POUNDS\n(3)GRAMS TO OUNCES | (4)GRAMS TO POUNDS\n(5)KILOGRAMS TO OUNCES | (6)KILOGRAMS TO POUNDS\n");
 					scanf("%d",&choice);
 					switch (choice)
 					{
 					case 1:
-						/* code */
+						printf("MILLIGRAM TO OUNCES\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.milligram);
+						printf("%f Milligram is %f is Ounce\n",m1.milligram,milligram_to_ounce(m1));						
 						break;
-					
+					case 2:
+						printf("MILLIGRAMS TO POUNDS\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.milligram);
+						printf("%f Milligram is %f is Pounds\n",m1.milligram,milligram_to_pounds(m1));						
+						break;
+					case 3:
+						printf("GRAMS TO OUNCES\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.gram);
+						printf("%f Gram is %f is Ounces\n",m1.gram,gram_to_ounce(m1));						
+						break;
+					case 4:
+						printf("GRAMS TO POUNDS\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.gram);
+						printf("%f Gram is %f is Pounds\n",m1.gram,gram_to_pound(m1));						
+						break;
+					case 5:
+						printf("KILOGRAMS TO OUNCES\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.kilogram);
+						printf("%f Kilograms is %f is Pounds\n",m1.kilogram,kilogram_to_ounce(m1));						
+						break;
+					case 6:
+						printf("KILOGRAMS TO POUNDS\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.kilogram);
+						printf("%f Kilograms is %f is Pounds\n",m1.kilogram,kilogram_to_pounds(m1));						
+						break;																													
 					default:
 						break;
 					}
@@ -351,14 +401,64 @@ int main(){
 					break;				
 				case 3:
 					printf("UNITS OF DISTANCE/LENGTH CONVERTER\n");
-					printf("Select a conversion:(1)(2)(3)(4)(5)(6)(7)(8)(9)(10)\n");
+					printf("Select a conversion:(1)MILLIMETERS TO INCHES | (2)MILLIMITERS TO FEET | (3)CENTIMETERS TO INCHES\n(4)CENTIMETERS TO FEET | (5)METERS TO INCHES | (6)METERS TO FEET\n(7)METERS TO MILES | (8)KILOMETERS TO FEET | (9)KILOMETERS TO MILES\n");
 					scanf("%d",&choice);	
 					switch (choice)
 					{
 					case 1:
-						/* code */
+						printf("MILLIMETERS TO INCHES\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.millimeter);
+						printf("%f Millimeters is %f is Inches\n",m1.millimeter,millimeter_to_inches(m1));
 						break;
-					
+					case 2:
+						printf("MILLIMITERS TO FEET\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.millimeter);
+						printf("%f Millimeters is %f is Feet\n",m1.millimeter,millimeter_to_feet(m1));
+						break;
+					case 3:
+						printf("CENTIMETERS TO INCHES\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.centimeter);
+						printf("%f Centimeters is %f is Inches\n",m1.centimeter,centimeter_to_inches(m1));
+						break;
+					case 4:
+						printf("CENTIMETERS TO FEET\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.centimeter);
+						printf("%f Centimeters is %f is Feet\n",m1.centimeter,centimeter_to_feet(m1));
+						break;
+					case 5:
+						printf("METERS TO INCHES\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.meter);
+						printf("%f Meters is %f is Inches\n",m1.meter,meter_to_inches(m1));
+						break;
+					case 6:
+						printf("METERS TO FEET\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.meter);
+						printf("%f Meters is %f is Feet\n",m1.meter,meter_to_feet(m1));
+						break;
+					case 7:
+						printf("METERS TO MILES\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.meter);
+						printf("%f Meters is %f is Miles\n",m1.meter,meter_to_miles(m1));
+						break;
+					case 8:
+						printf("KILOMETERS TO FEET\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.kilometer);
+						printf("%f Kilometers is %f is Feet\n",m1.kilometer,kilometer_to_feet(m1));
+						break;
+					case 9:
+						printf("KILOMETERS TO MILES\n");
+						printf("Input measurement:\n");
+						scanf("%f",&m1.kilometer);
+						printf("%f Kilometers is %f is Miles\n",m1.kilometer,kilometer_to_miles(m1));
+						break;																																															
 					default:
 						break;
 					}
@@ -422,9 +522,6 @@ float meter_to_feet (struct metric m){
 }
 float meter_to_miles (struct metric m){
 	return (m.meter * 0.0006214);
-}
-float kilometer_to_inches (struct metric m){
-	return (m.kilometer * 39370.08);
 }
 float kilometer_to_feet (struct metric m){
 	return (m.kilometer * 3280.84); 
