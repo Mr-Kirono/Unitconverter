@@ -94,25 +94,17 @@ int main(){
 	struct imperial imp1;
 	int choice;
 	int quit = 0;
-	char exit;
 	printf("This program converts units\n"); 
 	while (quit == 0)
 	{
 		printf("Select a conversion option\n");
-		printf("(1) TEMPERATURE CONVERTER | (2) IMPERIAL/METRIC UNIT CONVERTER\n");
+		printf("(1) TEMPERATURE CONVERTER | (2) IMPERIAL/METRIC UNIT CONVERTER || Or Input 'q' to exit\n");
 		scanf("%d",&choice);
 		printf("%d\n",choice);
 		if (choice == 1){
-			printf("TEMPERATURE CONVERTER\nPlease select a conversion option. || OR press 'q' to quit\n");
+			printf("TEMPERATURE CONVERTER\nPlease select a conversion option.\n");
 			printf("(1) CELCIUS TO FARENHEIT | (2) FARENHEIT TO CELCIUS\n(3) CELCIUS TO KELVIN    | (4) KELVIN TO CELCIUS\n(5) FARENHEIT TO KELVIN  | (6) KELVIN TO FARENHEIT\n");
-			scanf("%d%c",&choice,&exit);
-			if (exit == 'q' || 'Q')
-			{
-				quit = 1;
-			}else{
-				quit = 0;
-				continue;
-			}
+			scanf("%d%c",&choice);
 			switch (choice)
 			{
 			case 1:
@@ -120,48 +112,47 @@ int main(){
 				printf("Input temperature\n");
 				scanf("%f",&t1.cel);
 				printf("%f Celcius is %f Farenheight\n",t1.cel,cel_to_far (t1));
-				continue;
+				break;
 			case 2:
 				printf("(2) FARENHEIT TO CELCIUS\n");
 				printf("Input temperature\n");
 				scanf("%f",&t1.far);
 				printf("%f Farenheight is %f Celcius\n",t1.far,far_to_cel (t1));
-				continue;
+				break;
 			case 3:
 				printf("(3) CELCIUS TO KELVIN\n");
 				printf("Input temperature\n");
 				scanf("%f",&t1.cel);
 				printf("%f Celcius is %f Kelvin\n",t1.cel,cel_to_kel (t1));
-				continue;
+				break;
 			case 4:
 				printf("(4) KELVIN TO CELCIUS\n");
 				printf("Input temperature\n");
 				scanf("%f",&t1.kel);
 				printf("%f Kelvin is %f Celcius\n",t1.kel,kel_to_cel (t1));				
-				continue;
+				break;
 			case 5:
 				printf("(5) FARENHEIT TO KELVIN\n");
 				printf("Input temperature\n");
 				scanf("%f",&t1.far);
 				printf("%f Farenheight is %f Kelvin\n",t1.far,far_to_kel (t1));
-				continue;
+				break;
 			case 6:
 				printf("(6) KELVIN TO FARENHEIT\n");
 				printf("Input temperature\n");
 				scanf("%f",&t1.kel);
 				printf("%f Kelvin is %f Farenheight\n",t1.kel,kel_to_far (t1));
-				continue;															
+				break;															
 			default:
 				printf("Invalid input please select one of the provided options.\n");
-				continue;
+				break;
 			}
-			continue;
 		}
 		else if (choice == 2)
 		{
-			printf("IMPERIAL/METRIC UNIT CONVERTER\nPlease select a conversion option. || OR press 'q' to quit\n");
+			printf("IMPERIAL/METRIC UNIT CONVERTER\nPlease select a conversion option.\n");
 			printf("(1) IMPERIAL TO METRIC CONVERTER | (2) METRIC TO IMPERIAL CONVERTER\n");
-			scanf("%d%c",&choice,&exit);
+			scanf("%d%c",&choice);		
 			if (choice == 1){
 				printf("IMPERIAL TO METRIC CONVERTER\n");
 				printf("Select a conversion\n(1)CONVERT LIQUID UNITS | (2)CONVERT UNITS OF MASS\n(3) CONVERT UNITS OF LENGTH/DISTANCE\n");
