@@ -95,7 +95,7 @@ int main(){
 	int choice;
 	int quit = 0;
 	char exit;
-	printf("This program converts units\n");
+	printf("This program converts units\n"); 
 	while (quit == 0)
 	{
 		printf("Select a conversion option\n");
@@ -111,6 +111,7 @@ int main(){
 				quit = 1;
 			}else{
 				quit = 0;
+				continue;
 			}
 			switch (choice)
 			{
@@ -119,41 +120,42 @@ int main(){
 				printf("Input temperature\n");
 				scanf("%f",&t1.cel);
 				printf("%f Celcius is %f Farenheight\n",t1.cel,cel_to_far (t1));
-				break;
+				continue;
 			case 2:
 				printf("(2) FARENHEIT TO CELCIUS\n");
 				printf("Input temperature\n");
 				scanf("%f",&t1.far);
 				printf("%f Farenheight is %f Celcius\n",t1.far,far_to_cel (t1));
-				break;
+				continue;
 			case 3:
 				printf("(3) CELCIUS TO KELVIN\n");
 				printf("Input temperature\n");
 				scanf("%f",&t1.cel);
 				printf("%f Celcius is %f Kelvin\n",t1.cel,cel_to_kel (t1));
-				break;
+				continue;
 			case 4:
 				printf("(4) KELVIN TO CELCIUS\n");
 				printf("Input temperature\n");
 				scanf("%f",&t1.kel);
 				printf("%f Kelvin is %f Celcius\n",t1.kel,kel_to_cel (t1));				
-				break;
+				continue;
 			case 5:
 				printf("(5) FARENHEIT TO KELVIN\n");
 				printf("Input temperature\n");
 				scanf("%f",&t1.far);
 				printf("%f Farenheight is %f Kelvin\n",t1.far,far_to_kel (t1));
-				break;
+				continue;
 			case 6:
 				printf("(6) KELVIN TO FARENHEIT\n");
 				printf("Input temperature\n");
 				scanf("%f",&t1.kel);
 				printf("%f Kelvin is %f Farenheight\n",t1.kel,kel_to_far (t1));
-				break;															
+				continue;															
 			default:
 				printf("Invalid input please select one of the provided options.\n");
-				break;
+				continue;
 			}
+			continue;
 		}
 		else if (choice == 2)
 		{
